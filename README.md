@@ -1,5 +1,13 @@
 Flea is a Lua web framework that aims to be tiny and secure by default.
 
+Requirements
+------------
+
+	fcgi
+	lua-cjson
+	symmetric
+	arc4random
+
 Secure by default
 -----------------
 
