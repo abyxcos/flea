@@ -95,4 +95,4 @@ function os.utctime()
 	return os.time( os.date( "!*t" ) )
 end
 
-table.unpack = table.unpack or unpack
+unpack = table.unpack or unpack
