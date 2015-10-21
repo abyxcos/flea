@@ -31,7 +31,8 @@ end
 
 function _M.run()
 	while fcgi.accept() do
-		local url = fcgi.getenv( "DOCUMENT_URI" )
+		local url = assert( fcgi.getenv( "DOCUMENT_URI" ),
+			"DOCUMENT_URI not found, a fastcgi server is required." )
 		local route, args = routes.match( url )
 
 		fcgi.print( "Content-Type: text/html; charset=utf-8\r\n" )
