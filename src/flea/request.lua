@@ -145,7 +145,7 @@ local function request_add_tables( request )
 				return nil
 			end
 
-			local header = fcgi.getenv( "HTTP_" .. header:upper():gsub( "%-", "_" ) )
+			local header = fcgi.getenv( header:upper():gsub( "%-", "_" ) )
 
 			headers_seen[ key ] = true
 			self[ key ] = header
