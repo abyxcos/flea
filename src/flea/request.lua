@@ -82,6 +82,13 @@ local function request_add_methods( request )
 
 		self.status = { 404, "Not Found" }
 	end
+	
+	request.log = function( self, level, message )
+		print( level .. ": " ..
+			"IP:" .. self.headers.REMOTE_ADDR ..
+			" agent:\"" .. self.headers.HTTP_USER_AGENT .. "\" " ..
+			message )
+	end
 end
 
 local function parse_query( query )
